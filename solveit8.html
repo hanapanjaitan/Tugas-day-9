@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve it 8!</title>
+</head>
+<body>
+    Ketik kalimat: <br>
+    <input type="text"> <br><br>
+
+    Karakter yang dicari: <br>
+    <input type="text"> <br><br>
+
+    <input type="button" onclick="cariAlph()" value="Cari!">
+
+    <p id="output"></p>
+</body>
+<script>
+    const cariAlph=()=>{
+        var kata = document.getElementsByTagName('input')[0].value
+        var huruf = document.getElementsByTagName('input')[1].value
+
+        var hasil = 0
+        for(i=0;i<kata.length;i++){
+            if(huruf===kata[i]) hasil++
+        }
+
+        document.getElementById('output').innerHTML = `Jumlah '${huruf}' sebanyak ${hasil} buah`
+    }
+
+</script>
+</html>

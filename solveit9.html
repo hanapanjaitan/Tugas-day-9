@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve it 9!</title>
+</head>
+<body>
+    <h2>Kalkulator sederhana</h2>
+    Masukkan angka 1: <input type="number" name="angka1" id="angka1"><br><br>
+    Masukkan angka 2: <input type="number" name="angka2" id="angka2"><br><br>
+
+    <input type="button" onclick="kali()" value="Kali x"> 
+    <input type="button" onclick="bagi()" value="Bagi /"> 
+    <input type="button" onclick="tambah()" value="Tambah +"> 
+    <input type="button" onclick="kurang()" value="Kurang -"> <br><br>
+    <input type="button" onclick="modulus()" value="Modulus %"> 
+    <input type="button" onclick="pangkat()" value="Pangkat ^"> 
+
+    <p id="output"></p>
+</body>
+<script>
+
+    
+    const kali=()=> {
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `${a} x ${b} = ${a*b}`
+    }
+    
+    const bagi=()=> {
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `${a} / ${b} = ${a/b}`
+    }
+
+    const tambah=()=> {
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `${a} + ${b} = ${a+b}`
+    }
+
+    const kurang=()=> {
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `${a} - ${b} = ${a-b}`
+    }
+
+    const modulus=()=> {
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `${a} % ${b} = ${a%b}`
+    }
+
+    const pangkat=()=>{
+        var a = document.getElementById('angka1').value
+        var b = document.getElementById('angka2').value
+        document.getElementById('output').innerHTML = `Hasil ${a}${b.toString().sup()} = ${a**b}`
+    }
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve it 10!</title>
+</head>
+<body>
+    <strong>1. Siapakah presiden ketigas Republik Indonesia?</strong><br><br>
+    <input type="radio" name="soal1" value="1"> Prof. B.J. Habibie
+    <input type="radio" name="soal1" value="0"> Abdurrahman Wahid
+    <input type="radio" name="soal1" value="0"> Ir. Soekarno
+    <input type="radio" name="soal1" value="0"> Joko Widodo <br><br>
+
+    <strong>2. Berikut adalah nama-nama bahasa pemograman, kecuali...</strong><br><br>
+    <input type="radio" name="soal2" value="0"> Python
+    <input type="radio" name="soal2" value="1"> Micro:bit
+    <input type="radio" name="soal2" value="0"> JavaScript
+    <input type="radio" name="soal2" value="0"> HTML <br><br>
+
+    <strong>3. Apa judul lagu yang diduga diplagiat oleh lagu 'Sayang' Via Vallen?</strong><br><br>
+    <input type="radio" name="soal3" value="0"> Lelaki Kardus
+    <input type="radio" name="soal3" value="0"> Mangga Kampret
+    <input type="radio" name="soal3" value="1"> Mirai E Kiroro
+    <input type="radio" name="soal3" value="0"> Aku bukan boneka <br><br>
+
+    <strong>4. Siapakah sosok dibalik Bruce Wayne?</strong><br><br>
+    <input type="radio" name="soal4" value="0"> Gilang 'Bungkus'
+    <input type="radio" name="soal4" value="0"> Unyil
+    <input type="radio" name="soal4" value="0"> Goodboy Jaksel
+    <input type="radio" name="soal4" value="1"> Bruce Wayne<br><br>
+
+    <input type="button" value="Submit" onclick="submit()">
+
+    <p id="output"></p>
+</body>
+<script>
+    const submit=()=>{
+        var soal = []
+        var radio = ['soal1', 'soal2', 'soal3', 'soal4']
+
+        for(j=0;j<radio.length;j++){
+            for(i=0;i<document.getElementsByName(radio[j]).length;i++) {
+                if(document.getElementsByName(radio[j])[i].checked) {
+                    soal.push(parseInt(document.getElementsByName(radio[j])[i].value))
+                }
+            }
+        }
+        var hasil = 0
+        for(k=0;k<radio.length;k++){
+            hasil += soal[k]
+        }
+        hasil *= 25
+        // var totalnilai = (soal[0] + soal[1] + soal[2] + soal[3])*25
+        document.getElementById('output').innerHTML = '<strong>Nilai akhir anda ' + hasil +'</strong>'
+    }
+</script>
+</html>
